@@ -7,57 +7,111 @@ function getComputerChoice() {
 function playRound(playerChoice, computerChoice) {
   if (playerChoice === "rock") {
     if (computerChoice === "rock") {
+      console.log(`You picked ${playerChoice}`);
       console.log(`The computer picked ${computerChoice}`);
       console.log("It's a tie");
-      return (tieCount += 1);
+      tieCount += 1;
+      console.log(`
+      You: ${winCount}
+      Computer: ${lossCount}`);
+      return tieCount;
     } else if (computerChoice === "scissors") {
+      console.log(`You picked ${playerChoice}`);
       console.log(`The computer picked ${computerChoice}`);
       console.log("You win!");
-      return (winCount += 1);
+      winCount += 1;
+      console.log(`
+      You: ${winCount}
+      Computer: ${lossCount}`);
+      return winCount;
     } else if (computerChoice === "paper") {
+      console.log(`You picked ${playerChoice}`);
       console.log(`The computer picked ${computerChoice}`);
       console.log("You're a big loser HAHAHAHAHAHA");
-      return (lossCount += 1);
+      lossCount += 1;
+      console.log(`
+      You: ${winCount}
+      Computer: ${lossCount}`);
+      return lossCount;
     }
   }
   if (playerChoice === "scissors") {
     if (computerChoice === "scissors") {
+      console.log(`You picked ${playerChoice}`);
       console.log(`The computer picked ${computerChoice}`);
       console.log("It's a tie");
-      return (tieCount += 1);
+      tieCount += 1;
+      console.log(`
+      You: ${winCount}
+      Computer: ${lossCount}`);
+      return tieCount;
     } else if (computerChoice === "rock") {
+      console.log(`You picked ${playerChoice}`);
       console.log(`The computer picked ${computerChoice}`);
       console.log("You're a big loser HAHAHAHAHAHA");
-      return (lossCount += 1);
+      lossCount += 1;
+      console.log(`
+      You: ${winCount}
+      Computer: ${lossCount}`);
+      return lossCount;
     } else if (computerChoice === "paper") {
+      console.log(`You picked ${playerChoice}`);
       console.log(`The computer picked ${computerChoice}`);
       console.log("You win!");
-      return (winCount += 1);
+      winCount += 1;
+      console.log(`
+      You: ${winCount}
+      Computer: ${lossCount}`);
+      return winCount;
     }
   }
   if (playerChoice === "paper") {
     if (computerChoice === "paper") {
+      console.log(`You picked ${playerChoice}`);
       console.log(`The computer picked ${computerChoice}`);
       console.log("It's a tie");
-      return (tieCount += 1);
+      tieCount += 1;
+      console.log(`
+      You: ${winCount}
+      Computer: ${lossCount}`);
+      return tieCount;
     } else if (computerChoice === "rock") {
+      console.log(`You picked ${playerChoice}`);
       console.log(`The computer picked ${computerChoice}`);
       console.log("You win!");
-      return (winCount += 1);
+      winCount += 1;
+      console.log(`
+      You: ${winCount}
+      Computer: ${lossCount}`);
+      return winCount;
     } else if (computerChoice === "scissors") {
+      console.log(`You picked ${playerChoice}`);
       console.log(`The computer picked ${computerChoice}`);
       console.log("You're a big loser HAHAHAHAHAHA");
-      return (lossCount += 1);
+      lossCount += 1;
+      console.log(`
+      You: ${winCount}
+      Computer: ${lossCount}`);
+      return lossCount;
     }
   }
 }
 
-//function game()
+function game() {
+  while (winCount < 3 && lossCount < 3) {
+    const computerChoice = getComputerChoice();
+    const playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+    playRound(playerChoice, computerChoice);
+  }
+  if (winCount === 3) {
+    console.log("You won the best of 5 :)");
+  } else if (lossCount === 3) {
+    console.log("The computer won the best of 5 :(");
+  }
+}
 
 let winCount = 0;
 let lossCount = 0;
 let tieCount = 0;
-const computerChoice = getComputerChoice();
-const playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
 
-playRound(playerChoice, computerChoice);
+game();
