@@ -1,7 +1,7 @@
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
-const result = document.querySelector("#results");
+const buttons = document.querySelectorAll("button");
 
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -10,6 +10,11 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let playerChoice = "rock";
+    });
+  });
   if (playerChoice === "rock") {
     if (computerChoice === "rock") {
       console.log(`You picked ${playerChoice}`);
@@ -102,39 +107,4 @@ function playRound(playerChoice, computerChoice) {
   }
 }
 
-rock.addEventListener("click", function () {
-  let playerChoice = "rock";
-  let computerChoice = getComputerChoice();
-  playRound(playerChoice, computerChoice);
-});
-
-paper.addEventListener("click", () => {
-  let playerChoice = "paper";
-  let computerChoice = getComputerChoice();
-  playRound(playerChoice, computerChoice);
-});
-
-scissors.addEventListener("click", () => {
-  let playerChoice = "scissors";
-  let computerChoice = getComputerChoice();
-  playRound(playerChoice, computerChoice);
-});
-
-// function game() {
-//   while (winCount < 3 && lossCount < 3) {
-//     const computerChoice = getComputerChoice();
-//     const playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
-//     playRound(playerChoice, computerChoice);
-//   }
-//   if (winCount === 3) {
-//     console.log("You won the best of 5 :)");
-//   } else if (lossCount === 3) {
-//     console.log("The computer won the best of 5 :(");
-//   }
-// }
-
-let winCount = 0;
-let lossCount = 0;
-let tieCount = 0;
-
-// game();
+playRound(playerChoice, computerChoice);
