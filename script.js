@@ -1,7 +1,12 @@
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
-const result = document.querySelector("#results");
+const div = document.querySelector("#results");
+const result = document.createElement("h2");
+const score = document.createElement("h3");
+
+div.appendChild(result);
+div.appendChild(score);
 
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -12,91 +17,81 @@ function getComputerChoice() {
 function playRound(playerChoice, computerChoice) {
   if (playerChoice === "rock") {
     if (computerChoice === "rock") {
-      console.log(`You picked ${playerChoice}`);
-      console.log(`The computer picked ${computerChoice}`);
-      console.log("It's a tie");
       tieCount += 1;
-      console.log(`
+      result.innerText = `You picked ${playerChoice}
+      The computer picked ${computerChoice}
+      
       You: ${winCount}
-      Computer: ${lossCount}`);
+      Computer: ${lossCount}`;
       return tieCount;
     } else if (computerChoice === "scissors") {
-      console.log(`You picked ${playerChoice}`);
-      console.log(`The computer picked ${computerChoice}`);
-      console.log("You win!");
       winCount += 1;
-      console.log(`
+      result.innerText = `You picked ${playerChoice}
+      The computer picked ${computerChoice}
+
       You: ${winCount}
-      Computer: ${lossCount}`);
+      Computer: ${lossCount}`;
       return winCount;
     } else if (computerChoice === "paper") {
-      console.log(`You picked ${playerChoice}`);
-      console.log(`The computer picked ${computerChoice}`);
-      console.log("You're a big loser HAHAHAHAHAHA");
       lossCount += 1;
-      console.log(`
+      result.innerText = `You picked ${playerChoice}
+      The computer picked ${computerChoice}
+
       You: ${winCount}
-      Computer: ${lossCount}`);
-      return lossCount;
+      Computer: ${lossCount}`;
     }
   }
   if (playerChoice === "scissors") {
     if (computerChoice === "scissors") {
-      console.log(`You picked ${playerChoice}`);
-      console.log(`The computer picked ${computerChoice}`);
-      console.log("It's a tie");
       tieCount += 1;
-      console.log(`
+      result.innerText = `You picked ${playerChoice}
+      The computer picked ${computerChoice}
+
       You: ${winCount}
-      Computer: ${lossCount}`);
+      Computer: ${lossCount}`;
       return tieCount;
     } else if (computerChoice === "rock") {
-      console.log(`You picked ${playerChoice}`);
-      console.log(`The computer picked ${computerChoice}`);
-      console.log("You're a big loser HAHAHAHAHAHA");
       lossCount += 1;
-      console.log(`
+      result.innerText = `You picked ${playerChoice}
+      The computer picked ${computerChoice}
+
       You: ${winCount}
-      Computer: ${lossCount}`);
+      Computer: ${lossCount}`;
       return lossCount;
     } else if (computerChoice === "paper") {
-      console.log(`You picked ${playerChoice}`);
-      console.log(`The computer picked ${computerChoice}`);
-      console.log("You win!");
       winCount += 1;
-      console.log(`
+      result.innerText = `You picked ${playerChoice}
+      The computer picked ${computerChoice}
+
       You: ${winCount}
-      Computer: ${lossCount}`);
+      Computer: ${lossCount}`;
       return winCount;
     }
   }
   if (playerChoice === "paper") {
     if (computerChoice === "paper") {
-      console.log(`You picked ${playerChoice}`);
-      console.log(`The computer picked ${computerChoice}`);
-      console.log("It's a tie");
       tieCount += 1;
-      console.log(`
+      result.innerText = `You picked ${playerChoice}
+      The computer picked ${computerChoice}
+
       You: ${winCount}
-      Computer: ${lossCount}`);
+      Computer: ${lossCount}`;
       return tieCount;
     } else if (computerChoice === "rock") {
-      console.log(`You picked ${playerChoice}`);
-      console.log(`The computer picked ${computerChoice}`);
-      console.log("You win!");
       winCount += 1;
-      console.log(`
+      result.innerText = `You picked ${playerChoice}
+      The computer picked ${computerChoice}
+
       You: ${winCount}
-      Computer: ${lossCount}`);
+      Computer: ${lossCount}`;
       return winCount;
     } else if (computerChoice === "scissors") {
-      console.log(`You picked ${playerChoice}`);
-      console.log(`The computer picked ${computerChoice}`);
-      console.log("You're a big loser HAHAHAHAHAHA");
       lossCount += 1;
-      console.log(`
+      result.innerText = `You picked ${playerChoice}
+      The computer picked ${computerChoice}
+
       You: ${winCount}
-      Computer: ${lossCount}`);
+      Computer: ${lossCount}`;
       return lossCount;
     }
   }
