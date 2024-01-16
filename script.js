@@ -8,7 +8,6 @@ div.appendChild(result);
 
 let winCount = 0;
 let lossCount = 0;
-let tieCount = 0;
 
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -19,13 +18,12 @@ function getComputerChoice() {
 function playRound(playerChoice, computerChoice) {
   if (playerChoice === "rock") {
     if (computerChoice === "rock") {
-      tieCount += 1;
       result.innerText = `You picked ${playerChoice}
       The computer picked ${computerChoice}
 
       You: ${winCount}
       Computer: ${lossCount}`;
-      return tieCount;
+      return winCount;
     } else if (computerChoice === "scissors") {
       winCount += 1;
       result.innerText = `You picked ${playerChoice}
@@ -34,11 +32,15 @@ function playRound(playerChoice, computerChoice) {
       You: ${winCount}
       Computer: ${lossCount}`;
       if (winCount === 5) {
-        alert("You win!");
+        alert(`
+          You win!
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       } else if (lossCount === 5) {
-        alert("L + ratio + ur bald");
+        alert(`
+          L + ratio + ur bald
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       }
@@ -51,12 +53,15 @@ function playRound(playerChoice, computerChoice) {
       You: ${winCount}
       Computer: ${lossCount}`;
       if (winCount === 5) {
-        winCount += 1;
-        alert("You win!");
+        alert(`
+          You win!
+          Make a new selection if you would like to play again.`);
+        winCount = 0;
+        lossCount = 0;
       } else if (lossCount === 5) {
-        lossCount += 1;
-        1;
-        alert("L + ratio + ur bald");
+        alert(`
+          L + ratio + ur bald
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       }
@@ -65,13 +70,12 @@ function playRound(playerChoice, computerChoice) {
   }
   if (playerChoice === "scissors") {
     if (computerChoice === "scissors") {
-      tieCount += 1;
       result.innerText = `You picked ${playerChoice}
       The computer picked ${computerChoice}
 
       You: ${winCount}
       Computer: ${lossCount}`;
-      return tieCount;
+      return winCount;
     } else if (computerChoice === "rock") {
       lossCount += 1;
       result.innerText = `You picked ${playerChoice}
@@ -80,11 +84,15 @@ function playRound(playerChoice, computerChoice) {
       You: ${winCount}
       Computer: ${lossCount}`;
       if (winCount === 5) {
-        alert("You win!");
+        alert(`
+          You win!
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       } else if (lossCount === 5) {
-        alert("L + ratio + ur bald");
+        alert(`
+          L + ratio + ur bald
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       }
@@ -97,11 +105,15 @@ function playRound(playerChoice, computerChoice) {
       You: ${winCount}
       Computer: ${lossCount}`;
       if (winCount === 5) {
-        alert("You win!");
+        alert(`
+          You win!
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       } else if (lossCount === 5) {
-        alert("L + ratio + ur bald");
+        alert(`
+          L + ratio + ur bald
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       }
@@ -110,13 +122,12 @@ function playRound(playerChoice, computerChoice) {
   }
   if (playerChoice === "paper") {
     if (computerChoice === "paper") {
-      tieCount += 1;
       result.innerText = `You picked ${playerChoice}
       The computer picked ${computerChoice}
 
       You: ${winCount}
       Computer: ${lossCount}`;
-      return tieCount;
+      return winCount;
     } else if (computerChoice === "rock") {
       winCount += 1;
       result.innerText = `You picked ${playerChoice}
@@ -125,11 +136,15 @@ function playRound(playerChoice, computerChoice) {
       You: ${winCount}
       Computer: ${lossCount}`;
       if (winCount === 5) {
-        alert("You win!");
+        alert(`
+          You win!
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       } else if (lossCount === 5) {
-        alert("L + ratio + ur bald");
+        alert(`
+          L + ratio + ur bald
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       }
@@ -142,11 +157,15 @@ function playRound(playerChoice, computerChoice) {
       You: ${winCount}
       Computer: ${lossCount}`;
       if (winCount === 5) {
-        alert("You win!");
+        alert(`
+          You win!
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       } else if (lossCount === 5) {
-        alert("L + ratio + ur bald");
+        alert(`
+          L + ratio + ur bald
+          Make a new selection if you would like to play again.`);
         winCount = 0;
         lossCount = 0;
       }
