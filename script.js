@@ -3,10 +3,12 @@ const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 const div = document.querySelector("#results");
 const result = document.createElement("h2");
-const score = document.createElement("h3");
 
 div.appendChild(result);
-div.appendChild(score);
+
+let winCount = 0;
+let lossCount = 0;
+let tieCount = 0;
 
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -20,7 +22,7 @@ function playRound(playerChoice, computerChoice) {
       tieCount += 1;
       result.innerText = `You picked ${playerChoice}
       The computer picked ${computerChoice}
-      
+
       You: ${winCount}
       Computer: ${lossCount}`;
       return tieCount;
@@ -31,6 +33,15 @@ function playRound(playerChoice, computerChoice) {
 
       You: ${winCount}
       Computer: ${lossCount}`;
+      if (winCount === 5) {
+        alert("You win!");
+        winCount = 0;
+        lossCount = 0;
+      } else if (lossCount === 5) {
+        alert("L + ratio + ur bald");
+        winCount = 0;
+        lossCount = 0;
+      }
       return winCount;
     } else if (computerChoice === "paper") {
       lossCount += 1;
@@ -39,6 +50,17 @@ function playRound(playerChoice, computerChoice) {
 
       You: ${winCount}
       Computer: ${lossCount}`;
+      if (winCount === 5) {
+        winCount += 1;
+        alert("You win!");
+      } else if (lossCount === 5) {
+        lossCount += 1;
+        1;
+        alert("L + ratio + ur bald");
+        winCount = 0;
+        lossCount = 0;
+      }
+      return lossCount;
     }
   }
   if (playerChoice === "scissors") {
@@ -57,6 +79,15 @@ function playRound(playerChoice, computerChoice) {
 
       You: ${winCount}
       Computer: ${lossCount}`;
+      if (winCount === 5) {
+        alert("You win!");
+        winCount = 0;
+        lossCount = 0;
+      } else if (lossCount === 5) {
+        alert("L + ratio + ur bald");
+        winCount = 0;
+        lossCount = 0;
+      }
       return lossCount;
     } else if (computerChoice === "paper") {
       winCount += 1;
@@ -65,6 +96,15 @@ function playRound(playerChoice, computerChoice) {
 
       You: ${winCount}
       Computer: ${lossCount}`;
+      if (winCount === 5) {
+        alert("You win!");
+        winCount = 0;
+        lossCount = 0;
+      } else if (lossCount === 5) {
+        alert("L + ratio + ur bald");
+        winCount = 0;
+        lossCount = 0;
+      }
       return winCount;
     }
   }
@@ -84,6 +124,15 @@ function playRound(playerChoice, computerChoice) {
 
       You: ${winCount}
       Computer: ${lossCount}`;
+      if (winCount === 5) {
+        alert("You win!");
+        winCount = 0;
+        lossCount = 0;
+      } else if (lossCount === 5) {
+        alert("L + ratio + ur bald");
+        winCount = 0;
+        lossCount = 0;
+      }
       return winCount;
     } else if (computerChoice === "scissors") {
       lossCount += 1;
@@ -92,6 +141,15 @@ function playRound(playerChoice, computerChoice) {
 
       You: ${winCount}
       Computer: ${lossCount}`;
+      if (winCount === 5) {
+        alert("You win!");
+        winCount = 0;
+        lossCount = 0;
+      } else if (lossCount === 5) {
+        alert("L + ratio + ur bald");
+        winCount = 0;
+        lossCount = 0;
+      }
       return lossCount;
     }
   }
@@ -115,21 +173,17 @@ scissors.addEventListener("click", () => {
   playRound(playerChoice, computerChoice);
 });
 
-// function game() {
-//   while (winCount < 3 && lossCount < 3) {
-//     const computerChoice = getComputerChoice();
-//     const playerChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
-//     playRound(playerChoice, computerChoice);
-//   }
-//   if (winCount === 3) {
-//     console.log("You won the best of 5 :)");
-//   } else if (lossCount === 3) {
-//     console.log("The computer won the best of 5 :(");
-//   }
-// }
-
-let winCount = 0;
-let lossCount = 0;
-let tieCount = 0;
-
-// game();
+function game() {
+  while (winCount < 5 || lossCount < 5) {
+    playRound(playerChoice, computerChoice);
+    if (winCount === 5) {
+      alert("You win!");
+      winCount = 0;
+      lossCount = 0;
+    } else if (lossCount === 5) {
+      alert("L + ratio + ur bald");
+      winCount = 0;
+      lossCount = 0;
+    }
+  }
+}
